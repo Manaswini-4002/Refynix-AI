@@ -1,28 +1,34 @@
+# Refynix Backend
 
-# CodeReview AI - Premium Portal
+## Setup and Run
 
-Advanced Generative AI tool for code optimization and vulnerability detection.
+1.  **Navigate to the backend directory:**
+    ```bash
+    cd backend
+    ```
 
-## Local Setup (VS Code)
+2.  **Create a virtual environment (optional but recommended):**
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
 
-1. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-2. **Environment Variables**:
-   Ensure you have access to a valid Google Gemini API Key. The app expects `process.env.API_KEY` to be available (handled by Vite automatically if placed in a `.env` file).
+4.  **Configure Environment:**
+    - Rename `.env.example` to `.env`.
+    - Edit `.env` and add your `GROQ_API_KEY`.
 
-3. **Launch Development Server**:
-   ```bash
-   npm run dev
-   ```
+5.  **Run the Server:**
+    ```bash
+    python -m uvicorn main:app --reload
+    ```
+    The API will be available at `http://localhost:8000`.
 
-4. **Access UI**:
-   Open the browser to `http://localhost:5173`.
+## API Endpoints
 
-## Features
-- **Ultra-Fast Analysis**: Powered by Gemini 3 Flash.
-- **Side-by-Side Comparison**: Live diffing between original and optimized code.
-- **Cyber-Aesthetic UI**: High-fidelity dashboard built with Tailwind CSS.
-- **Voice Intelligence**: Multi-modal session support for auditory explanations.
+-   `POST /analyze`: Analyzes code using Groq Llama 3.3.
+-   `GET /health`: Health check.
