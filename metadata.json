@@ -1,0 +1,7 @@
+{
+  "name": "Refinyx",
+  "description": "The ultimate architectural code refinement and optimization portal powered by Gemini 2.5 Intelligence.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
